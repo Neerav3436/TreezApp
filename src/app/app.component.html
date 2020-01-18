@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" class="text-success pr-2">QlikApp</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li  routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+        <a  class="nav-link" routerLink="sorting" >Sorting</a>
+      </li>
+      <li  routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+        <a  class="nav-link" routerLink="palindrome">Palindrome</a>
+      </li>
+      <li  routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+        <a  class="nav-link" routerLink="anagram">Anagram</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="row">
+  <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+    <router-outlet></router-outlet>
+  </div>
+</div>

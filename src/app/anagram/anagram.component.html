@@ -1,9 +1,18 @@
-<form class="example-form ml-4 mt-4">
+<form class="example-form ml-4 mt-4" [formGroup]="validateAnagram">
     <mat-form-field class="example-full-width">
-        <input matInput placeholder="First String for Anagram Test" type="text" maxLength="10">
+        <input matInput placeholder="First String for Anagram Test" type="text" formControlName="inputA">
     </mat-form-field>
     <mat-form-field class="example-full-width">
-        <input matInput placeholder="Second String for Anagram Test" type="text" maxLength="10">
+        <input matInput placeholder="Second String for Anagram Test" type="text" formControlName="inputB">
     </mat-form-field>
-    <button mat-raised-button color="primary" class="ml-3" (click)="testPalindrome()">Test</button>
+    <button mat-raised-button color="primary" class="ml-3" (click)="testPalindrome()" type="submit" [disabled]='!validateAnagram.valid'>Test</button>
 </form>
+
+<div class="row ml-4 mt-4">
+<div class="alert alert-success mt-4 d-flex justify-content-center" role="alert" *ngIf="initialTest">
+    Yes It's an Anagram
+   </div>
+   <div class="alert alert-danger mt-4 d-flex justify-content-center" role="alert" *ngIf="!initialTest">
+    Not a Anagram..
+   </div>
+</div>

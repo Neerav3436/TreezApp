@@ -10,8 +10,8 @@ export class SortingComponent implements OnInit {
   private isGenerated: boolean = false;
   private randNumbers: number[] = [];
   private sortedNumbers: number[] = [];
-  private tempArray:number[] = [];
-  private isCleared:boolean = false;
+  private isSorted: boolean = false;
+
   constructor() { }
 
   ngOnInit() {
@@ -25,11 +25,10 @@ export class SortingComponent implements OnInit {
   }
 
   public sortNumbers() {
+    this.isSorted = true;
     console.log(this.randNumbers);
     this.sortedNumbers = this.quickSort(this.randNumbers, 0, this.randNumbers.length - 1);
-    console.log(this.sortedNumbers);
     console.log(this.randNumbers);
-    
   }
 
   public swap(items, leftIndex, rightIndex) {
@@ -77,5 +76,4 @@ export class SortingComponent implements OnInit {
     this.randNumbers = [];
     this.isGenerated=false;
   }
-
 }

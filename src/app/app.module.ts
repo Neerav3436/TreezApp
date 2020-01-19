@@ -11,11 +11,14 @@ import { AnagramComponent } from './anagram/anagram.component';
 import { SortingComponent } from './sorting/sorting.component';
 import { PalindromeComponent } from './palindrome/palindrome.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
+import { QlikComponent } from './qlik/qlik.component';
 
 import { MatInputModule,MatButtonModule} from '@angular/material';
 
 
+
 const appRoutes: Routes = [
+  { path: '', component: QlikComponent },
   { path: 'sorting', component: SortingComponent },
   { path: 'palindrome', component: PalindromeComponent},
   { path: 'anagram', component: AnagramComponent},
@@ -31,7 +34,8 @@ const appRoutes: Routes = [
     PalindromeComponent,
     ErrorPageComponent,
     AnagramComponent,
-    AnagramComponent
+    AnagramComponent,
+    QlikComponent
   ],
   imports: [
     BrowserModule,

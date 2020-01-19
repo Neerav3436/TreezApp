@@ -1,1 +1,15 @@
-<p>sorting works!</p>
+<div class="container  mt-4 ml-4">
+<button type="button" class="btn btn-primary" (click)="generateNumbers()" *ngIf="!isGenerated">Generate 100 Random Numbers</button>
+<div class="alert alert-info mt-4" role="alert" *ngIf="isGenerated && randNumbers.length>1">
+    Your Randomly generated numbers are ready!! Please note that these are between 0 to 99 :)
+  </div>
+  <p class="row p-4" *ngFor="let randomNumbers of randNumbers" style="display:inline;">
+    {{randomNumbers}}
+  </p>
+  <hr>
+  <button type="button" class="btn btn-primary" (click)="sortNumbers()" *ngIf="isGenerated && randNumbers.length>1">Sort Numbers</button><br>
+  <div class="row p-4" *ngFor="let sortedNums of sortedNumbers" style="display:inline;">
+    {{sortedNums}}
+  </div><br>
+  <button type="button" class="btn btn-danger mt-4" (click)="clear()" *ngIf="isGenerated && randNumbers.length>1">Clear</button>
+</div>

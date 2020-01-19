@@ -11,6 +11,8 @@ import { SortingComponent } from './sorting/sorting.component';
 import { PalindromeComponent } from './palindrome/palindrome.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
 
+import { MatInputModule,MatButtonModule} from '@angular/material';
+
 
 const appRoutes: Routes = [
   { path: 'sorting', component: SortingComponent },
@@ -33,6 +35,8 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     AppRoutingModule,
+    MatInputModule,
+    MatButtonModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(appRoutes)
   ],

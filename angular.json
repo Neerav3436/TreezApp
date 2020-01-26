@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "QlikApp": {
+    "TreezApp": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/QlikApp",
+            "outputPath": "dist/TreezApp",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -68,18 +68,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "QlikApp:build"
+            "browserTarget": "TreezApp:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "QlikApp:build:production"
+              "browserTarget": "TreezApp:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "QlikApp:build"
+            "browserTarget": "TreezApp:build"
           }
         },
         "test": {
@@ -117,16 +117,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "QlikApp:serve"
+            "devServerTarget": "TreezApp:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "QlikApp:serve:production"
+              "devServerTarget": "TreezApp:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "QlikApp"
+  "defaultProject": "TreezApp"
 }

@@ -1,0 +1,21 @@
+<h1 mat-dialog-title class="text-success">Please Create a new Stock here</h1>
+<div mat-dialog-content>
+    <mat-form-field>
+        <!-- <input matInput [(ngModel)]="data.animal"> -->
+        <!-- <input matInput placeholder="Name" value="Sushi"> -->
+        <input matInput placeholder="Name">
+    </mat-form-field><br>
+    <mat-form-field>
+        <input matInput placeholder="Description">
+    </mat-form-field><br>
+    <mat-form-field>
+        <input matInput placeholder="Price" type="number">
+    </mat-form-field><br>
+    <mat-form-field>
+        <input matInput placeholder="Quantity Available">
+    </mat-form-field>
+</div><br>
+<div mat-dialog-actions>
+    <button mat-raised-button color="primary" (click)="onNoClick()" style="margin-left:110px;">Update</button>
+    <button mat-raised-button color="warn" [mat-dialog-close]="data.animal" cdkFocusInitial>Cancel</button>
+</div>

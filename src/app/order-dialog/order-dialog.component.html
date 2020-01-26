@@ -1,0 +1,16 @@
+<h1 mat-dialog-title class="text-success">Please Create a new Order here</h1>
+<div mat-dialog-content>
+    <mat-form-field>
+        <input matInput placeholder="Item">
+    </mat-form-field><br>
+    <mat-form-field>
+        <input matInput placeholder="User Email" type="email">
+    </mat-form-field><br>
+    <mat-form-field>
+        <input matInput placeholder="Order Status">
+    </mat-form-field>
+</div><br>
+<div mat-dialog-actions>
+    <button mat-raised-button color="primary" (click)="onNoClick()" style="margin-left:110px;">Update</button>
+    <button mat-raised-button color="warn" [mat-dialog-close]="data.animal" cdkFocusInitial>Cancel</button>
+</div>

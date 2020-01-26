@@ -1,0 +1,27 @@
+<div class="m-4">
+    <button mat-raised-button color="primary" (click)="onOrderCreate()">Create New Order</button>
+</div>
+<mat-divider></mat-divider>
+<div class="row  ml-4">
+    <h3 class="text-muted mt-4 ml-4">CURRENT ORDERS</h3>
+</div>
+<div class="row  ml-4">
+    <mat-form-field class="row  ml-4 wide">
+        <input matInput placeholder="Search Order By User Email">
+    </mat-form-field>
+    <button mat-raised-button color="primary" class="ml-4 resizeButton" (click)="searchOrder()">Search</button>
+</div>
+<div class="row  ml-4">
+    <mat-card *ngFor="let orderDetail of orderDetails" class="m-2" [style.backgroundColor]="'#ffdd99'">
+        <mat-card-header>
+            <mat-card-title>#{{orderDetail.name}}</mat-card-title>
+            <mat-card-subtitle>User Email : {{orderDetail.email}}</mat-card-subtitle>
+            <mat-card-subtitle>TimeStamp : {{orderDetail.orderTimestamp | date:'medium'}}  </mat-card-subtitle>
+            <mat-card-subtitle >Order Status : {{orderDetail.status}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-actions class="pl-5">
+            <button mat-raised-button color="primary" (click)="onOrderCreate()">View / Edit</button>
+            <button mat-raised-button color="warn">Delete</button>
+        </mat-card-actions>
+    </mat-card>
+</div>

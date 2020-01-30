@@ -1,5 +1,6 @@
 export interface InventoryData {
-        name: string,
+        name:string,
+        iname: string,
         description: string,
         price: number,
         quantity: number

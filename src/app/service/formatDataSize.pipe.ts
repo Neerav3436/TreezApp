@@ -8,6 +8,6 @@ import {Pipe,PipeTransform, Injectable} from '@angular/core'
   })
 export class ShortenPipe implements PipeTransform{
     transform(value:any){
-        return value.substr(0,15)+"....";
+        return value.length > 15?value.substr(0,15)+"...." : value;
     }
 }

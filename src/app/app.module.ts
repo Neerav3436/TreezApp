@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,7 +13,7 @@ import { OrdersComponent } from './orders/orders.component';
 import {TreezComponent} from './treez/treez.component';
 import { InventoryComponent } from './inventory/inventory.component';
 
-import {ShortenPipe} from './formatDataSize.pipe';
+import {ShortenPipe} from './service/formatDataSize.pipe';
 
 import { MatInputModule,MatButtonModule,MatDividerModule,MatCardModule, MatDialogModule} from '@angular/material';
 import { InventoryDialogComponent } from './inventory-dialog/inventory-dialog.component';
@@ -49,6 +50,7 @@ const appRoutes: Routes = [
     ReactiveFormsModule,
     BrowserAnimationsModule,
     FormsModule,
+    HttpClientModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],

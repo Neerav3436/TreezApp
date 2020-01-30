@@ -5,16 +5,22 @@
 <div class="row  ml-4">
     <h3 class="text-muted mt-4 ml-4">CURRENT INVENTORY</h3>
 </div>
-<div class="row  ml-4">
+<div class="row  ml-4" [formGroup]="search" (ngSubmit)="onSearch()">
     <mat-form-field class="row  ml-4 wide">
-        <input matInput placeholder="Search Inventory By Name">
+        <input matInput placeholder="Search Inventory By Name" formControlName="searchText">
     </mat-form-field>
-    <button mat-raised-button color="primary" class="ml-4 resizeButton" (click)="searchInventory()">Search</button>
+    <button mat-raised-button color="primary" class="ml-4 resizeButton" type="submit" (click)="searchInventory()" [disabled]="!search.valid">Search</button>
 </div>
+<p *ngIf="isFetching && !error" class="row  ml-4">Loading...</p>
+      <div class="alert alert-danger row  ml-4" *ngIf="error">
+        <h1>An Error Occurred!</h1>
+        <p>{{ error }}</p>
+        <button class="btn btn-danger" (click)="onHandleError()">Okay</button>
+      </div>
 <div class="row  ml-4">
-    <mat-card *ngFor="let inventoryDetail of inventoryDetails" class="m-2" [style.backgroundColor]="'#cae6d3'">
+    <mat-card *ngFor="let inventoryDetail of inventoryDetails,let i = index" class="m-2" [style.backgroundColor]="'#cae6d3'">
         <mat-card-header>
-            <mat-card-title>#{{inventoryDetail.name}}</mat-card-title>
+            <mat-card-title>#{{inventoryDetail.iname}}</mat-card-title>
             <mat-card-subtitle>Description : {{inventoryDetail.description | limitSize}}</mat-card-subtitle>
             <mat-card-subtitle>Price : {{inventoryDetail.price | currency:'CAD'}} <span class="ml-4">Quantity :
                     {{inventoryDetail.quantity}}</span>
@@ -22,7 +28,7 @@
         </mat-card-header>
         <mat-card-actions class="pl-5">
             <button mat-raised-button color="primary" (click)="onInventoryCreate()">View / Edit</button>
-            <button mat-raised-button color="warn">Delete</button>
+            <button mat-raised-button color="warn" (click)="onDelete(i)">Delete</button>
         </mat-card-actions>
     </mat-card>
 </div>
